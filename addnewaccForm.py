@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\addnewaccForm.ui'
+# Form implementation generated from reading ui file 'addnewaccForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,10 +14,30 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_AddNewAccoutWindow(object):
     def setupUi(self, AddNewAccoutWindow):
         AddNewAccoutWindow.setObjectName("AddNewAccoutWindow")
-        AddNewAccoutWindow.resize(764, 388)
-        AddNewAccoutWindow.setMinimumSize(QtCore.QSize(0, 388))
-        AddNewAccoutWindow.setMaximumSize(QtCore.QSize(1000, 388))
+        AddNewAccoutWindow.resize(764, 550)
+        AddNewAccoutWindow.setMinimumSize(QtCore.QSize(440, 550))
+        AddNewAccoutWindow.setMaximumSize(QtCore.QSize(1000, 550))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Resources/icons/add-user.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        AddNewAccoutWindow.setWindowIcon(icon)
         AddNewAccoutWindow.setAutoFillBackground(False)
+        AddNewAccoutWindow.setStyleSheet("QWidget\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QLabel-----*/\n"
+"QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #717e87;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.centralwidget = QtWidgets.QWidget(AddNewAccoutWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
@@ -33,6 +53,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.addaccLabel.setFont(font)
+        self.addaccLabel.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.addaccLabel.setScaledContents(True)
         self.addaccLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.addaccLabel.setWordWrap(False)
@@ -48,6 +75,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.platform_Label.setFont(font)
+        self.platform_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.platform_Label.setObjectName("platform_Label")
         self.verticalLayout.addWidget(self.platform_Label)
         self.username_Label = QtWidgets.QLabel(self.centralwidget)
@@ -55,6 +89,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.username_Label.setFont(font)
+        self.username_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.username_Label.setObjectName("username_Label")
         self.verticalLayout.addWidget(self.username_Label)
         self.usermail_Label = QtWidgets.QLabel(self.centralwidget)
@@ -62,6 +103,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.usermail_Label.setFont(font)
+        self.usermail_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.usermail_Label.setObjectName("usermail_Label")
         self.verticalLayout.addWidget(self.usermail_Label)
         self.userpassword_Label = QtWidgets.QLabel(self.centralwidget)
@@ -69,6 +117,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.userpassword_Label.setFont(font)
+        self.userpassword_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.userpassword_Label.setObjectName("userpassword_Label")
         self.verticalLayout.addWidget(self.userpassword_Label)
         self.creationdate_Label = QtWidgets.QLabel(self.centralwidget)
@@ -76,6 +131,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.creationdate_Label.setFont(font)
+        self.creationdate_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.creationdate_Label.setObjectName("creationdate_Label")
         self.verticalLayout.addWidget(self.creationdate_Label)
         self.recoverycodes_Label = QtWidgets.QLabel(self.centralwidget)
@@ -83,6 +145,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.recoverycodes_Label.setFont(font)
+        self.recoverycodes_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.recoverycodes_Label.setObjectName("recoverycodes_Label")
         self.verticalLayout.addWidget(self.recoverycodes_Label)
         self.phonenumber_Label = QtWidgets.QLabel(self.centralwidget)
@@ -90,6 +159,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.phonenumber_Label.setFont(font)
+        self.phonenumber_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.phonenumber_Label.setObjectName("phonenumber_Label")
         self.verticalLayout.addWidget(self.phonenumber_Label)
         self.recoverymail_Label = QtWidgets.QLabel(self.centralwidget)
@@ -97,6 +173,13 @@ class Ui_AddNewAccoutWindow(object):
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
         self.recoverymail_Label.setFont(font)
+        self.recoverymail_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: #00111d;\n"
+"    color: #ff1066;\n"
+"    border-color: #000000;\n"
+"\n"
+"}")
         self.recoverymail_Label.setObjectName("recoverymail_Label")
         self.verticalLayout.addWidget(self.recoverymail_Label)
         self.gridLayout_2.addLayout(self.verticalLayout, 1, 0, 1, 1)
@@ -104,27 +187,315 @@ class Ui_AddNewAccoutWindow(object):
         self.verticalLayout_4.setContentsMargins(5, 0, 5, 0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.platform_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.platform_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.platform_lineedit.setObjectName("platform_lineedit")
         self.verticalLayout_4.addWidget(self.platform_lineedit)
         self.username_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.username_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.username_lineedit.setObjectName("username_lineedit")
         self.verticalLayout_4.addWidget(self.username_lineedit)
         self.usermail_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.usermail_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.usermail_lineedit.setObjectName("usermail_lineedit")
         self.verticalLayout_4.addWidget(self.usermail_lineedit)
         self.userpassword_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.userpassword_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.userpassword_lineedit.setObjectName("userpassword_lineedit")
         self.verticalLayout_4.addWidget(self.userpassword_lineedit)
         self.creationdate_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.creationdate_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.creationdate_lineedit.setObjectName("creationdate_lineedit")
         self.verticalLayout_4.addWidget(self.creationdate_lineedit)
         self.recoverycodes_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.recoverycodes_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.recoverycodes_lineedit.setObjectName("recoverycodes_lineedit")
         self.verticalLayout_4.addWidget(self.recoverycodes_lineedit)
         self.phonenumber_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.phonenumber_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.phonenumber_lineedit.setObjectName("phonenumber_lineedit")
         self.verticalLayout_4.addWidget(self.phonenumber_lineedit)
         self.recoverymail_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.recoverymail_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ff;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #1e4b6d;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::hover\n"
+"{\n"
+"    background-color: #082336;\n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::focus\n"
+"{\n"
+"    \n"
+"    color: #3e93ca;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    border-color: #ff1066;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.recoverymail_lineedit.setObjectName("recoverymail_lineedit")
         self.verticalLayout_4.addWidget(self.recoverymail_lineedit)
         self.gridLayout_2.addLayout(self.verticalLayout_4, 1, 1, 1, 1)
@@ -132,36 +503,381 @@ class Ui_AddNewAccoutWindow(object):
         self.verticalLayout_2.setContentsMargins(5, 3, 5, 3)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.clearPlatform_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearPlatform_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("Resources/icons/clear.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.clearPlatform_button.setIcon(icon1)
         self.clearPlatform_button.setObjectName("clearPlatform_button")
         self.verticalLayout_2.addWidget(self.clearPlatform_button)
         self.clearUsername_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearUsername_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearUsername_button.setIcon(icon1)
         self.clearUsername_button.setObjectName("clearUsername_button")
         self.verticalLayout_2.addWidget(self.clearUsername_button)
         self.clearMail_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearMail_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearMail_button.setIcon(icon1)
         self.clearMail_button.setObjectName("clearMail_button")
         self.verticalLayout_2.addWidget(self.clearMail_button)
         self.clearPassword_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearPassword_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearPassword_button.setIcon(icon1)
         self.clearPassword_button.setObjectName("clearPassword_button")
         self.verticalLayout_2.addWidget(self.clearPassword_button)
         self.clearCreationDate_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearCreationDate_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearCreationDate_button.setIcon(icon1)
         self.clearCreationDate_button.setObjectName("clearCreationDate_button")
         self.verticalLayout_2.addWidget(self.clearCreationDate_button)
         self.clearRecoveryCodes_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearRecoveryCodes_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearRecoveryCodes_button.setIcon(icon1)
         self.clearRecoveryCodes_button.setObjectName("clearRecoveryCodes_button")
         self.verticalLayout_2.addWidget(self.clearRecoveryCodes_button)
         self.clearPhone_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearPhone_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearPhone_button.setIcon(icon1)
         self.clearPhone_button.setObjectName("clearPhone_button")
         self.verticalLayout_2.addWidget(self.clearPhone_button)
         self.clearRecoveryMail_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearRecoveryMail_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.clearRecoveryMail_button.setIcon(icon1)
         self.clearRecoveryMail_button.setObjectName("clearRecoveryMail_button")
         self.verticalLayout_2.addWidget(self.clearRecoveryMail_button)
         self.gridLayout_2.addLayout(self.verticalLayout_2, 1, 2, 1, 1)
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setContentsMargins(5, -1, 5, -1)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.save_button = QtWidgets.QPushButton(self.centralwidget)
+        self.save_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    padding: 10px;\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"\n"
+"\n"
+"\n"
+"}\n"
+"")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("Resources/icons/save.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.save_button.setIcon(icon2)
         self.save_button.setObjectName("save_button")
         self.verticalLayout_5.addWidget(self.save_button)
         self.clearall_button = QtWidgets.QPushButton(self.centralwidget)
+        self.clearall_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #3de6af;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    padding: 10px;\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #3dffaf;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #3dc8af;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"\n"
+"\n"
+"\n"
+"}\n"
+"")
+        self.clearall_button.setIcon(icon1)
         self.clearall_button.setObjectName("clearall_button")
         self.verticalLayout_5.addWidget(self.clearall_button)
         self.gridLayout_2.addLayout(self.verticalLayout_5, 2, 0, 1, 3)

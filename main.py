@@ -44,6 +44,9 @@ class App(QtWidgets.QMainWindow):
         self.ui.acc_Table.setColumnWidth(0, 150)
         self.ui.acc_Table.setColumnWidth(1, 167)
         self.ui.acc_Table.setColumnWidth(2, 167)
+        self.ui.acc_Table.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.Fixed)
+        self.ui.acc_Table.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.Fixed)
+        self.ui.acc_Table.horizontalHeader().setSectionResizeMode(2, QtWidgets.QHeaderView.Fixed)
         self.ui.acc_Table.setSelectionBehavior(QtWidgets.QTableView.SelectRows)
         self.acc_info_read()
 
@@ -194,23 +197,27 @@ class App(QtWidgets.QMainWindow):
                               self.add_acc_ui.phonenumber_lineedit.text(), self.add_acc_ui.recoverymail_lineedit.text()]
 
                 UserInputs = self.NotSpecifeidCalculator(given_entries_list=UserInputs)
+                if self.isAllNotSpecified(given_entries_list=UserInputs):
+                    self.cant_everythink_not_specified()
+                    conn3.commit()
+                    conn3.close()
+                else:
+                    c3.execute("""INSERT INTO acc_storage (acc_platform, 
+                    username, 
+                    user_mail, 
+                    user_password, 
+                    acc_creation_date, 
+                    acc_recovery_codes, 
+                    acc_phone_number, 
+                    acc_recovery_mail) VALUES (?,?,?,?,?,?,?,?)""", UserInputs)
+                    conn3.commit()
+                    conn3.close()
 
-                c3.execute("""INSERT INTO acc_storage (acc_platform, 
-                username, 
-                user_mail, 
-                user_password, 
-                acc_creation_date, 
-                acc_recovery_codes, 
-                acc_phone_number, 
-                acc_recovery_mail) VALUES (?,?,?,?,?,?,?,?)""", UserInputs)
-                conn3.commit()
-                conn3.close()
-
-                #Update The Table Widget
-                self.acc_info_read()
-                #Saved Information
-                self.saved_noti()
-                self.addNewWindow.close()
+                    #Update The Table Widget
+                    self.acc_info_read()
+                    #Saved Information
+                    self.saved_noti()
+                    self.addNewWindow.close()
     #End of Saving Function
 #End Of Add New Account Window Functions
 
@@ -372,6 +379,8 @@ class App(QtWidgets.QMainWindow):
             edited_datas = self.NotSpecifeidCalculator(given_entries_list=edited_datas)
             if self.isAllNotSpecified(given_entries_list=edited_datas):
                 self.cant_everythink_not_specified()
+                conn5.commit()
+                conn5.close()
             else:
                 c5.execute(f"""UPDATE acc_storage SET acc_platform = '{edited_datas[0]}', 
                 username = '{edited_datas[1]}', 

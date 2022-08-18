@@ -14,35 +14,187 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(522, 495)
+        MainWindow.resize(522, 684)
+        MainWindow.setMaximumSize(QtCore.QSize(522, 16777215))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Resources/icons/vault.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("QWidget\n"
+"{\n"
+"    background-color: #1a1a1a;\n"
+"    color: #000000;\n"
+"\n"
+"}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
         self.examineButton = QtWidgets.QPushButton(self.centralwidget)
-        self.examineButton.setGeometry(QtCore.QRect(120, 380, 191, 51))
         font = QtGui.QFont()
         font.setFamily("Verdana Pro Semibold")
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.examineButton.setFont(font)
+        self.examineButton.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #fff;\n"
+"    font-size: 11px;\n"
+"    font-weight: bold;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #CB6FFF;\n"
+"\n"
+"}")
         self.examineButton.setObjectName("examineButton")
-        self.addnewButton = QtWidgets.QPushButton(self.centralwidget)
-        self.addnewButton.setGeometry(QtCore.QRect(310, 380, 71, 51))
-        font = QtGui.QFont()
-        font.setFamily("Verdana Pro Cond")
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.addnewButton.setFont(font)
-        self.addnewButton.setObjectName("addnewButton")
+        self.gridLayout.addWidget(self.examineButton, 2, 0, 1, 1)
         self.generalLabel = QtWidgets.QLabel(self.centralwidget)
-        self.generalLabel.setGeometry(QtCore.QRect(10, 20, 511, 71))
         font = QtGui.QFont()
         font.setFamily("Microsoft JhengHei")
         font.setPointSize(22)
         self.generalLabel.setFont(font)
+        self.generalLabel.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"}")
         self.generalLabel.setObjectName("generalLabel")
+        self.gridLayout.addWidget(self.generalLabel, 0, 0, 1, 2)
         self.acc_Table = QtWidgets.QTableWidget(self.centralwidget)
-        self.acc_Table.setGeometry(QtCore.QRect(10, 80, 501, 291))
+        self.acc_Table.setMaximumSize(QtCore.QSize(501, 16777215))
+        self.acc_Table.setStyleSheet("QTableWidget\n"
+"{\n"
+"    background-color: #450079;\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 10px;\n"
+"    color: #f0f0f0;\n"
+"    gridline-color: gray;\n"
+"    outline : 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableWidget::disabled\n"
+"{\n"
+"    background-color: #242526;\n"
+"    border: 1px solid #32414B;\n"
+"    color: #656565;\n"
+"    gridline-color: #656565;\n"
+"    outline : 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableWidget::item:hover \n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #000;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableWidget::item:selected \n"
+"{\n"
+"    background-color: #71FF3D;\n"
+"    color: #000;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableWidget::item:selected:disabled\n"
+"{\n"
+"    background-color: #1a1b1c;\n"
+"    border: 2px solid #525251;\n"
+"    color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableCornerButton::section\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #ff1056;\n"
+"    border-radius: 8px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section\n"
+"{\n"
+"    color: #ff1056;\n"
+"    border-top: 0px;\n"
+"    border-bottom: 1px solid gray;\n"
+"    border-right: 1px solid gray;\n"
+"    background-color: #ff1056;\n"
+"    border-radius: 15px;\n"
+"    margin-top:1px;\n"
+"    margin-bottom:1px;\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section:disabled\n"
+"{\n"
+"    background-color: #525251;\n"
+"    color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section:checked\n"
+"{\n"
+"    color: #000;\n"
+"    background-color: #ff3333;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section:checked:disabled\n"
+"{\n"
+"    color: #656565;\n"
+"    background-color: #525251;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section::vertical::first,\n"
+"QHeaderWidget::section::vertical::only-one\n"
+"{\n"
+"    border-top: 1px solid #353635;\n"
+"    border-radius: 8px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section::vertical\n"
+"{\n"
+"    border-top: 1px solid #353635;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section::horizontal::first,\n"
+"QHeaderWidget::section::horizontal::only-one\n"
+"{\n"
+"    border-left: 1px solid #353635;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderWidget::section::horizontal\n"
+"{\n"
+"    border-left: 1px solid #353635;\n"
+"\n"
+"}")
         self.acc_Table.setObjectName("acc_Table")
         self.acc_Table.setColumnCount(3)
         self.acc_Table.setRowCount(1)
@@ -54,6 +206,38 @@ class Ui_MainWindow(object):
         self.acc_Table.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.acc_Table.setHorizontalHeaderItem(2, item)
+        self.acc_Table.horizontalHeader().setVisible(True)
+        self.acc_Table.horizontalHeader().setCascadingSectionResizes(False)
+        self.acc_Table.horizontalHeader().setDefaultSectionSize(120)
+        self.acc_Table.horizontalHeader().setMinimumSectionSize(0)
+        self.gridLayout.addWidget(self.acc_Table, 1, 0, 1, 2)
+        self.addnewButton = QtWidgets.QPushButton(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("Verdana Pro Cond")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.addnewButton.setFont(font)
+        self.addnewButton.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #fff;\n"
+"    font-size: 11px;\n"
+"    font-weight: bold;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #CB6FFF;\n"
+"\n"
+"}")
+        self.addnewButton.setObjectName("addnewButton")
+        self.gridLayout.addWidget(self.addnewButton, 2, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 522, 21))
@@ -68,10 +252,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Account Storage"))
         self.examineButton.setText(_translate("MainWindow", "Examine the selected account."))
-        self.addnewButton.setText(_translate("MainWindow", "Add New"))
         self.generalLabel.setText(_translate("MainWindow", "All Stored Accounts Are Down Below."))
+        self.acc_Table.setSortingEnabled(True)
         item = self.acc_Table.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
         item = self.acc_Table.horizontalHeaderItem(0)
@@ -80,7 +264,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Username"))
         item = self.acc_Table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "User Mail"))
-
+        self.addnewButton.setText(_translate("MainWindow", "Add New"))
 
 
 if __name__ == "__main__":

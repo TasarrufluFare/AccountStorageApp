@@ -21,6 +21,11 @@ class Ui_ExamineAccountWindow(object):
         icon.addPixmap(QtGui.QPixmap(".\\Resources/icons/examine.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ExamineAccountWindow.setWindowIcon(icon)
         ExamineAccountWindow.setAutoFillBackground(False)
+        ExamineAccountWindow.setStyleSheet("QWidget\n"
+"{\n"
+"    background-color: #000A3F;\n"
+"\n"
+"}")
         self.centralwidget = QtWidgets.QWidget(ExamineAccountWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
@@ -29,34 +34,122 @@ class Ui_ExamineAccountWindow(object):
         self.verticalLayout_4.setContentsMargins(5, 0, 5, 0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.platform_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.platform_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.platform_lineedit.setReadOnly(True)
         self.platform_lineedit.setObjectName("platform_lineedit")
         self.verticalLayout_4.addWidget(self.platform_lineedit)
         self.username_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.username_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.username_lineedit.setReadOnly(True)
         self.username_lineedit.setObjectName("username_lineedit")
         self.verticalLayout_4.addWidget(self.username_lineedit)
         self.usermail_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.usermail_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.usermail_lineedit.setReadOnly(True)
         self.usermail_lineedit.setObjectName("usermail_lineedit")
         self.verticalLayout_4.addWidget(self.usermail_lineedit)
         self.userpassword_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.userpassword_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.userpassword_lineedit.setReadOnly(True)
         self.userpassword_lineedit.setObjectName("userpassword_lineedit")
         self.verticalLayout_4.addWidget(self.userpassword_lineedit)
         self.creationdate_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.creationdate_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.creationdate_lineedit.setReadOnly(True)
         self.creationdate_lineedit.setObjectName("creationdate_lineedit")
         self.verticalLayout_4.addWidget(self.creationdate_lineedit)
         self.recoverycodes_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.recoverycodes_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.recoverycodes_lineedit.setReadOnly(True)
         self.recoverycodes_lineedit.setObjectName("recoverycodes_lineedit")
         self.verticalLayout_4.addWidget(self.recoverycodes_lineedit)
         self.phonenumber_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.phonenumber_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.phonenumber_lineedit.setReadOnly(True)
         self.phonenumber_lineedit.setObjectName("phonenumber_lineedit")
         self.verticalLayout_4.addWidget(self.phonenumber_lineedit)
         self.recoverymail_lineedit = QtWidgets.QLineEdit(self.centralwidget)
+        self.recoverymail_lineedit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    background-color: #07F7E7;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 10px;\n"
+"    padding: 5px;\n"
+"\n"
+"}")
         self.recoverymail_lineedit.setReadOnly(True)
         self.recoverymail_lineedit.setObjectName("recoverymail_lineedit")
         self.verticalLayout_4.addWidget(self.recoverymail_lineedit)
@@ -72,6 +165,13 @@ class Ui_ExamineAccountWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.aditaccLabel.setFont(font)
+        self.aditaccLabel.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.aditaccLabel.setScaledContents(True)
         self.aditaccLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.aditaccLabel.setWordWrap(False)
@@ -86,56 +186,128 @@ class Ui_ExamineAccountWindow(object):
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.platform_Label.setFont(font)
+        self.platform_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.platform_Label.setObjectName("platform_Label")
         self.verticalLayout.addWidget(self.platform_Label)
         self.username_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.username_Label.setFont(font)
+        self.username_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.username_Label.setObjectName("username_Label")
         self.verticalLayout.addWidget(self.username_Label)
         self.usermail_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.usermail_Label.setFont(font)
+        self.usermail_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.usermail_Label.setObjectName("usermail_Label")
         self.verticalLayout.addWidget(self.usermail_Label)
         self.userpassword_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.userpassword_Label.setFont(font)
+        self.userpassword_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.userpassword_Label.setObjectName("userpassword_Label")
         self.verticalLayout.addWidget(self.userpassword_Label)
         self.creationdate_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.creationdate_Label.setFont(font)
+        self.creationdate_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.creationdate_Label.setObjectName("creationdate_Label")
         self.verticalLayout.addWidget(self.creationdate_Label)
         self.recoverycodes_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.recoverycodes_Label.setFont(font)
+        self.recoverycodes_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.recoverycodes_Label.setObjectName("recoverycodes_Label")
         self.verticalLayout.addWidget(self.recoverycodes_Label)
         self.phonenumber_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.phonenumber_Label.setFont(font)
+        self.phonenumber_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.phonenumber_Label.setObjectName("phonenumber_Label")
         self.verticalLayout.addWidget(self.phonenumber_Label)
         self.recoverymail_Label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Symbol")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.recoverymail_Label.setFont(font)
+        self.recoverymail_Label.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"    font-weight: bold;\n"
+"\n"
+"}")
         self.recoverymail_Label.setObjectName("recoverymail_Label")
         self.verticalLayout.addWidget(self.recoverymail_Label)
         self.gridLayout_2.addLayout(self.verticalLayout, 1, 0, 1, 1)
@@ -143,6 +315,39 @@ class Ui_ExamineAccountWindow(object):
         self.verticalLayout_2.setContentsMargins(5, 3, 5, 3)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.copyPlatform_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyPlatform_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyPlatform_button.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(".\\Resources/icons/copytoclipboard.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -150,36 +355,267 @@ class Ui_ExamineAccountWindow(object):
         self.copyPlatform_button.setObjectName("copyPlatform_button")
         self.verticalLayout_2.addWidget(self.copyPlatform_button)
         self.copyUsername_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyUsername_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyUsername_button.setText("")
         self.copyUsername_button.setIcon(icon1)
         self.copyUsername_button.setObjectName("copyUsername_button")
         self.verticalLayout_2.addWidget(self.copyUsername_button)
         self.copyMail_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyMail_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyMail_button.setText("")
         self.copyMail_button.setIcon(icon1)
         self.copyMail_button.setObjectName("copyMail_button")
         self.verticalLayout_2.addWidget(self.copyMail_button)
         self.copyPassword_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyPassword_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyPassword_button.setText("")
         self.copyPassword_button.setIcon(icon1)
         self.copyPassword_button.setObjectName("copyPassword_button")
         self.verticalLayout_2.addWidget(self.copyPassword_button)
         self.copyCreationDate_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyCreationDate_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyCreationDate_button.setText("")
         self.copyCreationDate_button.setIcon(icon1)
         self.copyCreationDate_button.setObjectName("copyCreationDate_button")
         self.verticalLayout_2.addWidget(self.copyCreationDate_button)
         self.copyRecoveryCodes_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyRecoveryCodes_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyRecoveryCodes_button.setText("")
         self.copyRecoveryCodes_button.setIcon(icon1)
         self.copyRecoveryCodes_button.setObjectName("copyRecoveryCodes_button")
         self.verticalLayout_2.addWidget(self.copyRecoveryCodes_button)
         self.copyPhone_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyPhone_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyPhone_button.setText("")
         self.copyPhone_button.setIcon(icon1)
         self.copyPhone_button.setObjectName("copyPhone_button")
         self.verticalLayout_2.addWidget(self.copyPhone_button)
         self.copyRecoveryMail_button = QtWidgets.QPushButton(self.centralwidget)
+        self.copyRecoveryMail_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"    color: #fff;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}")
         self.copyRecoveryMail_button.setText("")
         self.copyRecoveryMail_button.setIcon(icon1)
         self.copyRecoveryMail_button.setObjectName("copyRecoveryMail_button")
@@ -188,6 +624,40 @@ class Ui_ExamineAccountWindow(object):
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.edit_button = QtWidgets.QPushButton(self.centralwidget)
+        self.edit_button.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: white;\n"
+"    font-size: 13px;\n"
+"    font-weight: bold;\n"
+"    border-top-right-radius: 36px;\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border-bottom-left-radius: 36px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"    background-color: #5c5c5c;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1096;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #4DFF0B;\n"
+"\n"
+"}")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(".\\Resources/icons/edit.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.edit_button.setIcon(icon2)

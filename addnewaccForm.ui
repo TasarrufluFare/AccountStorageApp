@@ -7,26 +7,49 @@
     <x>0</x>
     <y>0</y>
     <width>764</width>
-    <height>388</height>
+    <height>550</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>388</height>
+    <width>440</width>
+    <height>550</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1000</width>
-    <height>388</height>
+    <height>550</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Add New Account</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Resources/icons/add-user.ico</normaloff>Resources/icons/add-user.ico</iconset>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+	background-color: #00111d;
+	color: #000000;
+	border-color: #000000;
+
+}
+
+
+/*-----QLabel-----*/
+QLabel
+{
+	background-color: #00111d;
+	color: #717e87;
+	border-color: #000000;
+
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -47,6 +70,15 @@
           <weight>75</weight>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
         </property>
         <property name="text">
          <string>ADD NEW ACCOUNT</string>
@@ -89,6 +121,15 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
+        </property>
         <property name="text">
          <string>Platform:</string>
         </property>
@@ -101,6 +142,15 @@
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
         </property>
         <property name="text">
          <string>Username:</string>
@@ -115,6 +165,15 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
+        </property>
         <property name="text">
          <string>User Mail:</string>
         </property>
@@ -127,6 +186,15 @@
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
         </property>
         <property name="text">
          <string>User Password:</string>
@@ -141,6 +209,15 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
+        </property>
         <property name="text">
          <string>Creation Date:</string>
         </property>
@@ -153,6 +230,15 @@
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
         </property>
         <property name="text">
          <string>Recovery Codes:</string>
@@ -167,6 +253,15 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
+        </property>
         <property name="text">
          <string>Phone Number:</string>
         </property>
@@ -179,6 +274,15 @@
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: #00111d;
+	color: #ff1066;
+	border-color: #000000;
+
+}</string>
         </property>
         <property name="text">
          <string>Recovery Mail:</string>
@@ -202,28 +306,340 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="platform_lineedit"/>
+       <widget class="QLineEdit" name="platform_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="username_lineedit"/>
+       <widget class="QLineEdit" name="username_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="usermail_lineedit"/>
+       <widget class="QLineEdit" name="usermail_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="userpassword_lineedit"/>
+       <widget class="QLineEdit" name="userpassword_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="creationdate_lineedit"/>
+       <widget class="QLineEdit" name="creationdate_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="recoverycodes_lineedit"/>
+       <widget class="QLineEdit" name="recoverycodes_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="phonenumber_lineedit"/>
+       <widget class="QLineEdit" name="phonenumber_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="recoverymail_lineedit"/>
+       <widget class="QLineEdit" name="recoverymail_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px;
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -243,57 +659,369 @@
       </property>
       <item>
        <widget class="QPushButton" name="clearPlatform_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearUsername_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearMail_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearPassword_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearCreationDate_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearRecoveryCodes_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearPhone_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearRecoveryMail_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+        </property>
         <property name="text">
          <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>
@@ -301,17 +1029,101 @@
     </item>
     <item row="2" column="0" colspan="3">
      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
       <item>
        <widget class="QPushButton" name="save_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	padding: 10px;
+
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+
+
+
+}
+</string>
+        </property>
         <property name="text">
          <string>Save Account</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/save.ico</normaloff>Resources/icons/save.ico</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="clearall_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #3de6af;
+	color: #000000;
+	border-color: #000000;
+	padding: 10px;
+
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #3dffaf;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #3dc8af;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+
+
+
+}
+</string>
+        </property>
         <property name="text">
          <string>Clear All</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>Resources/icons/clear.ico</normaloff>Resources/icons/clear.ico</iconset>
         </property>
        </widget>
       </item>

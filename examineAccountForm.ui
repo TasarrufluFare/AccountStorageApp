@@ -32,6 +32,13 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+	background-color: #000A3F;
+
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="1" column="1">
@@ -50,6 +57,19 @@
       </property>
       <item>
        <widget class="QLineEdit" name="platform_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -57,6 +77,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="username_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -64,6 +97,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="usermail_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -71,6 +117,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="userpassword_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -78,6 +137,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="creationdate_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -85,6 +157,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="recoverycodes_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -92,6 +177,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="phonenumber_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -99,6 +197,19 @@
       </item>
       <item>
        <widget class="QLineEdit" name="recoverymail_lineedit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+	background-color: #07F7E7;
+	color: black;
+	font-weight: bold;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+
+}</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -123,6 +234,15 @@
           <weight>75</weight>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>EXAMINE ACCOUNT</string>
@@ -163,7 +283,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>Platform:</string>
@@ -176,7 +307,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>Username:</string>
@@ -189,7 +331,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>User Mail:</string>
@@ -202,7 +355,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>User Password:</string>
@@ -215,7 +379,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>Creation Date:</string>
@@ -228,7 +403,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>Recovery Codes:</string>
@@ -241,7 +427,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>Phone Number:</string>
@@ -254,7 +451,18 @@
          <font>
           <family>Segoe UI Symbol</family>
           <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+	font-weight: bold;
+
+}</string>
         </property>
         <property name="text">
          <string>Recovery Mail:</string>
@@ -279,6 +487,41 @@
       </property>
       <item>
        <widget class="QPushButton" name="copyPlatform_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -290,6 +533,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyUsername_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -301,6 +579,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyMail_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -312,6 +625,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyPassword_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -323,6 +671,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyCreationDate_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -334,6 +717,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyRecoveryCodes_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -345,6 +763,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyPhone_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -356,6 +809,41 @@
       </item>
       <item>
        <widget class="QPushButton" name="copyRecoveryMail_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #4DFF0B;
+	color: #fff;
+	font-weight: bold;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1056;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1096;
+
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -371,6 +859,42 @@
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
        <widget class="QPushButton" name="edit_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #ff1056;
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	border-top-right-radius: 36px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 36px;
+	padding: 10px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1096;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #4DFF0B;
+
+}</string>
+        </property>
         <property name="text">
          <string>Edit Account Properties</string>
         </property>
