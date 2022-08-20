@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'editaccForm.ui'
+# Form implementation generated from reading ui file '.\editaccForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,11 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_EditAccounttWindow(object):
     def setupUi(self, EditAccounttWindow):
         EditAccounttWindow.setObjectName("EditAccounttWindow")
-        EditAccounttWindow.resize(764, 573)
-        EditAccounttWindow.setMinimumSize(QtCore.QSize(0, 388))
-        EditAccounttWindow.setMaximumSize(QtCore.QSize(1000, 600))
+        EditAccounttWindow.resize(781, 612)
+        EditAccounttWindow.setMinimumSize(QtCore.QSize(0, 612))
+        EditAccounttWindow.setMaximumSize(QtCore.QSize(1000, 612))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("Resources/icons/edit.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\Resources/icons/edit.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         EditAccounttWindow.setWindowIcon(icon)
         EditAccounttWindow.setAutoFillBackground(False)
         EditAccounttWindow.setStyleSheet("QWidget\n"
@@ -174,9 +174,10 @@ class Ui_EditAccounttWindow(object):
         self.recoverymail_Label.setObjectName("recoverymail_Label")
         self.verticalLayout.addWidget(self.recoverymail_Label)
         self.gridLayout_2.addLayout(self.verticalLayout, 1, 0, 1, 1)
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_4.setContentsMargins(5, 0, 5, 0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setObjectName("gridLayout")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.platform_lineedit = QtWidgets.QLineEdit(self.centralwidget)
         self.platform_lineedit.setStyleSheet("QLineEdit\n"
 "{\n"
@@ -213,7 +214,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}")
         self.platform_lineedit.setObjectName("platform_lineedit")
-        self.verticalLayout_4.addWidget(self.platform_lineedit)
+        self.verticalLayout_3.addWidget(self.platform_lineedit)
         self.username_lineedit = QtWidgets.QLineEdit(self.centralwidget)
         self.username_lineedit.setStyleSheet("QLineEdit\n"
 "{\n"
@@ -250,7 +251,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}")
         self.username_lineedit.setObjectName("username_lineedit")
-        self.verticalLayout_4.addWidget(self.username_lineedit)
+        self.verticalLayout_3.addWidget(self.username_lineedit)
         self.usermail_lineedit = QtWidgets.QLineEdit(self.centralwidget)
         self.usermail_lineedit.setStyleSheet("QLineEdit\n"
 "{\n"
@@ -287,7 +288,10 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}")
         self.usermail_lineedit.setObjectName("usermail_lineedit")
-        self.verticalLayout_4.addWidget(self.usermail_lineedit)
+        self.verticalLayout_3.addWidget(self.usermail_lineedit)
+        self.gridLayout.addLayout(self.verticalLayout_3, 0, 0, 1, 1)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.userpassword_lineedit = QtWidgets.QLineEdit(self.centralwidget)
         self.userpassword_lineedit.setStyleSheet("QLineEdit\n"
 "{\n"
@@ -324,7 +328,93 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}")
         self.userpassword_lineedit.setObjectName("userpassword_lineedit")
-        self.verticalLayout_4.addWidget(self.userpassword_lineedit)
+        self.horizontalLayout_2.addWidget(self.userpassword_lineedit)
+        self.randomizepass_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.randomizepass_btn.setMinimumSize(QtCore.QSize(0, 40))
+        self.randomizepass_btn.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.randomizepass_btn.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 11px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1066;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1076;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(".\\Resources/icons/randompassword.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.randomizepass_btn.setIcon(icon1)
+        self.randomizepass_btn.setObjectName("randomizepass_btn")
+        self.horizontalLayout_2.addWidget(self.randomizepass_btn)
+        self.randompasssett_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.randompasssett_btn.setMinimumSize(QtCore.QSize(0, 40))
+        self.randompasssett_btn.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.randompasssett_btn.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #000000;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 11px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: #ff1066;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #ff1076;\n"
+"    color: #000000;\n"
+"    border-style: solid;\n"
+"    border-color: #000000;\n"
+"    font-weight : bold;\n"
+"    padding: 13px;\n"
+"\n"
+"}")
+        self.randompasssett_btn.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(".\\Resources/icons/passett.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.randompasssett_btn.setIcon(icon2)
+        self.randompasssett_btn.setObjectName("randompasssett_btn")
+        self.horizontalLayout_2.addWidget(self.randompasssett_btn)
+        self.gridLayout.addLayout(self.horizontalLayout_2, 1, 0, 1, 1)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.creationdate_lineedit = QtWidgets.QLineEdit(self.centralwidget)
         self.creationdate_lineedit.setStyleSheet("QLineEdit\n"
 "{\n"
@@ -473,9 +563,11 @@ class Ui_EditAccounttWindow(object):
 "}")
         self.recoverymail_lineedit.setObjectName("recoverymail_lineedit")
         self.verticalLayout_4.addWidget(self.recoverymail_lineedit)
-        self.gridLayout_2.addLayout(self.verticalLayout_4, 1, 1, 1, 1)
+        self.gridLayout.addLayout(self.verticalLayout_4, 2, 0, 1, 1)
+        self.gridLayout_2.addLayout(self.gridLayout, 1, 1, 1, 1)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setContentsMargins(5, 3, 5, 0)
+        self.verticalLayout_2.setContentsMargins(5, 4, 5, 5)
+        self.verticalLayout_2.setSpacing(9)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.clearPlatform_button = QtWidgets.QPushButton(self.centralwidget)
         self.clearPlatform_button.setStyleSheet("QPushButton\n"
@@ -511,9 +603,9 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("Resources/icons/clear.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.clearPlatform_button.setIcon(icon1)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(".\\Resources/icons/clear.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.clearPlatform_button.setIcon(icon3)
         self.clearPlatform_button.setObjectName("clearPlatform_button")
         self.verticalLayout_2.addWidget(self.clearPlatform_button)
         self.clearUsername_button = QtWidgets.QPushButton(self.centralwidget)
@@ -550,7 +642,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearUsername_button.setIcon(icon1)
+        self.clearUsername_button.setIcon(icon3)
         self.clearUsername_button.setObjectName("clearUsername_button")
         self.verticalLayout_2.addWidget(self.clearUsername_button)
         self.clearMail_button = QtWidgets.QPushButton(self.centralwidget)
@@ -587,7 +679,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearMail_button.setIcon(icon1)
+        self.clearMail_button.setIcon(icon3)
         self.clearMail_button.setObjectName("clearMail_button")
         self.verticalLayout_2.addWidget(self.clearMail_button)
         self.clearPassword_button = QtWidgets.QPushButton(self.centralwidget)
@@ -625,7 +717,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearPassword_button.setIcon(icon1)
+        self.clearPassword_button.setIcon(icon3)
         self.clearPassword_button.setObjectName("clearPassword_button")
         self.verticalLayout_2.addWidget(self.clearPassword_button)
         self.clearCreationDate_button = QtWidgets.QPushButton(self.centralwidget)
@@ -662,7 +754,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearCreationDate_button.setIcon(icon1)
+        self.clearCreationDate_button.setIcon(icon3)
         self.clearCreationDate_button.setObjectName("clearCreationDate_button")
         self.verticalLayout_2.addWidget(self.clearCreationDate_button)
         self.clearRecoveryCodes_button = QtWidgets.QPushButton(self.centralwidget)
@@ -699,7 +791,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearRecoveryCodes_button.setIcon(icon1)
+        self.clearRecoveryCodes_button.setIcon(icon3)
         self.clearRecoveryCodes_button.setObjectName("clearRecoveryCodes_button")
         self.verticalLayout_2.addWidget(self.clearRecoveryCodes_button)
         self.clearPhone_button = QtWidgets.QPushButton(self.centralwidget)
@@ -736,7 +828,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearPhone_button.setIcon(icon1)
+        self.clearPhone_button.setIcon(icon3)
         self.clearPhone_button.setObjectName("clearPhone_button")
         self.verticalLayout_2.addWidget(self.clearPhone_button)
         self.clearRecoveryMail_button = QtWidgets.QPushButton(self.centralwidget)
@@ -773,12 +865,12 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearRecoveryMail_button.setIcon(icon1)
+        self.clearRecoveryMail_button.setIcon(icon3)
         self.clearRecoveryMail_button.setObjectName("clearRecoveryMail_button")
         self.verticalLayout_2.addWidget(self.clearRecoveryMail_button)
         self.gridLayout_2.addLayout(self.verticalLayout_2, 1, 2, 1, 1)
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_5.setContentsMargins(5, -1, 5, -1)
+        self.verticalLayout_5.setContentsMargins(3, -1, 5, -1)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.OverwriteAccount_button = QtWidgets.QPushButton(self.centralwidget)
         self.OverwriteAccount_button.setStyleSheet("QPushButton\n"
@@ -816,9 +908,9 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("Resources/icons/overwrite.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.OverwriteAccount_button.setIcon(icon2)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(".\\Resources/icons/overwrite.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.OverwriteAccount_button.setIcon(icon4)
         self.OverwriteAccount_button.setObjectName("OverwriteAccount_button")
         self.verticalLayout_5.addWidget(self.OverwriteAccount_button)
         self.clearall_button = QtWidgets.QPushButton(self.centralwidget)
@@ -857,7 +949,7 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        self.clearall_button.setIcon(icon1)
+        self.clearall_button.setIcon(icon3)
         self.clearall_button.setObjectName("clearall_button")
         self.verticalLayout_5.addWidget(self.clearall_button)
         self.delete_acc_button = QtWidgets.QPushButton(self.centralwidget)
@@ -896,15 +988,15 @@ class Ui_EditAccounttWindow(object):
 "\n"
 "}\n"
 "")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("Resources/icons/delete.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.delete_acc_button.setIcon(icon3)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(".\\Resources/icons/delete.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.delete_acc_button.setIcon(icon5)
         self.delete_acc_button.setObjectName("delete_acc_button")
         self.verticalLayout_5.addWidget(self.delete_acc_button)
         self.gridLayout_2.addLayout(self.verticalLayout_5, 2, 0, 1, 3)
         EditAccounttWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(EditAccounttWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 764, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 781, 21))
         self.menubar.setObjectName("menubar")
         EditAccounttWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(EditAccounttWindow)
@@ -926,6 +1018,7 @@ class Ui_EditAccounttWindow(object):
         self.recoverycodes_Label.setText(_translate("EditAccounttWindow", "Recovery Codes:"))
         self.phonenumber_Label.setText(_translate("EditAccounttWindow", "Phone Number:"))
         self.recoverymail_Label.setText(_translate("EditAccounttWindow", "Recovery Mail:"))
+        self.randomizepass_btn.setText(_translate("EditAccounttWindow", "Randomize"))
         self.clearPlatform_button.setText(_translate("EditAccounttWindow", "Clear"))
         self.clearUsername_button.setText(_translate("EditAccounttWindow", "Clear"))
         self.clearMail_button.setText(_translate("EditAccounttWindow", "Clear"))

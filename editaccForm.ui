@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>764</width>
-    <height>573</height>
+    <width>781</width>
+    <height>612</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>388</height>
+    <height>612</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1000</width>
-    <height>600</height>
+    <height>612</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -283,23 +283,13 @@
      </layout>
     </item>
     <item row="1" column="1">
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <property name="leftMargin">
-       <number>5</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>5</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLineEdit" name="platform_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLineEdit" name="platform_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
 {
 	background-color: #082336;
 	color: #3e93ff;
@@ -333,13 +323,97 @@ QLineEdit::focus
 	padding: 10px;
 
 }</string>
-        </property>
-       </widget>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="username_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="usermail_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
+{
+	background-color: #082336;
+	color: #3e93ff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1e4b6d;
+	padding: 10px
+
+}
+
+
+QLineEdit::hover
+{
+	background-color: #082336;
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}
+
+
+QLineEdit::focus
+{
+	
+	color: #3e93ca;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff1066;
+	padding: 10px;
+
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QLineEdit" name="username_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="userpassword_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
 {
 	background-color: #082336;
 	color: #3e93ff;
@@ -373,13 +447,133 @@ QLineEdit::focus
 	padding: 10px;
 
 }</string>
-        </property>
-       </widget>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="randomizepass_btn">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+	background-color: #ff1056;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 11px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1066;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1076;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+          </property>
+          <property name="text">
+           <string>Randomize</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Resources/icons/randompassword.ico</normaloff>Resources/icons/randompassword.ico</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="randompasssett_btn">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+	background-color: #ff1056;
+	color: #000000;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 11px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #ff1066;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff1076;
+	color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	font-weight : bold;
+	padding: 13px;
+
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Resources/icons/passett.ico</normaloff>Resources/icons/passett.ico</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QLineEdit" name="usermail_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
+      <item row="2" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLineEdit" name="creationdate_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
 {
 	background-color: #082336;
 	color: #3e93ff;
@@ -413,13 +607,13 @@ QLineEdit::focus
 	padding: 10px;
 
 }</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="userpassword_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="recoverycodes_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
 {
 	background-color: #082336;
 	color: #3e93ff;
@@ -453,13 +647,13 @@ QLineEdit::focus
 	padding: 10px;
 
 }</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="creationdate_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="phonenumber_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
 {
 	background-color: #082336;
 	color: #3e93ff;
@@ -493,13 +687,13 @@ QLineEdit::focus
 	padding: 10px;
 
 }</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="recoverycodes_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="recoverymail_lineedit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
 {
 	background-color: #082336;
 	color: #3e93ff;
@@ -533,104 +727,29 @@ QLineEdit::focus
 	padding: 10px;
 
 }</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="phonenumber_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
-{
-	background-color: #082336;
-	color: #3e93ff;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #1e4b6d;
-	padding: 10px
-
-}
-
-
-QLineEdit::hover
-{
-	background-color: #082336;
-	color: #3e93ca;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #ff1066;
-	padding: 10px;
-
-}
-
-
-QLineEdit::focus
-{
-	
-	color: #3e93ca;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #ff1066;
-	padding: 10px;
-
-}</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="recoverymail_lineedit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit
-{
-	background-color: #082336;
-	color: #3e93ff;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #1e4b6d;
-	padding: 10px
-
-}
-
-
-QLineEdit::hover
-{
-	background-color: #082336;
-	color: #3e93ca;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #ff1066;
-	padding: 10px;
-
-}
-
-
-QLineEdit::focus
-{
-	
-	color: #3e93ca;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #ff1066;
-	padding: 10px;
-
-}</string>
-        </property>
-       </widget>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
     <item row="1" column="2">
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>9</number>
+      </property>
       <property name="leftMargin">
        <number>5</number>
       </property>
       <property name="topMargin">
-       <number>3</number>
+       <number>4</number>
       </property>
       <property name="rightMargin">
        <number>5</number>
       </property>
       <property name="bottomMargin">
-       <number>0</number>
+       <number>5</number>
       </property>
       <item>
        <widget class="QPushButton" name="clearPlatform_button">
@@ -1008,7 +1127,7 @@ QPushButton::pressed
     <item row="2" column="0" colspan="3">
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <property name="leftMargin">
-       <number>5</number>
+       <number>3</number>
       </property>
       <property name="rightMargin">
        <number>5</number>
@@ -1166,7 +1285,7 @@ QPushButton::pressed
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>764</width>
+     <width>781</width>
      <height>21</height>
     </rect>
    </property>

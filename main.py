@@ -1,5 +1,7 @@
+import os
 import sqlite3
 from PyQt5 import QtWidgets
+from functools import partial
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 import sys
 from selectionForm import Ui_MainWindow
@@ -7,6 +9,8 @@ from addnewaccForm import Ui_AddNewAccoutWindow
 from examineAccountForm import Ui_ExamineAccountWindow
 from editaccForm import Ui_EditAccounttWindow
 import clipboard
+from PasswordRandomize import create_list
+from PassSet import Ui_PasswordGeneratorSettings
 
 conn = sqlite3.connect("AccStorage.db")
 c = conn.cursor()
@@ -70,6 +74,8 @@ class App(QtWidgets.QMainWindow):
         self.add_acc_ui.clearRecoveryMail_button.clicked.connect(self.clearRecoveryMail)
         #End Of Clear Operations Define Section
         self.add_acc_ui.save_button.clicked.connect(self.SaveToDatabase)
+        self.add_acc_ui.randomizepass_btn.clicked.connect(partial(self.passrandomizer_getsettings, "add_new"))
+        self.add_acc_ui.randompasssett_btn.clicked.connect(self.passrandomizer_getsettingsforUI)
     #Clear Operations for add new account window ///////////
     def clearAll(self):
         self.add_acc_ui.platform_lineedit.setText("")
@@ -188,7 +194,6 @@ class App(QtWidgets.QMainWindow):
                 row_max_count = c3.fetchone()[0]
                 if row_max_count == None:
                     row_max_count = 0
-                new_id = row_max_count
                 #Deleted new id from first index
                 UserInputs = [self.add_acc_ui.platform_lineedit.text(),
                               self.add_acc_ui.username_lineedit.text(),
@@ -197,10 +202,22 @@ class App(QtWidgets.QMainWindow):
                               self.add_acc_ui.phonenumber_lineedit.text(), self.add_acc_ui.recoverymail_lineedit.text()]
 
                 UserInputs = self.NotSpecifeidCalculator(given_entries_list=UserInputs)
+                #Mail Address And Not Specified Control
                 if self.isAllNotSpecified(given_entries_list=UserInputs):
                     self.cant_everythink_not_specified()
                     conn3.commit()
                     conn3.close()
+                elif (not len(UserInputs[2].split("@")) == 2) and (not UserInputs[2] == 'Not Specified#(Code: 01)'):
+                    self.add_acc_ui.usermail_lineedit.setText("Please provide a valid email address.")
+                    if (not len(UserInputs[7].split("@")) == 2) and (not UserInputs[7] == 'Not Specified#(Code: 01)'):
+                        self.add_acc_ui.recoverymail_lineedit.setText("Please provide a valid email address.")
+                    conn3.commit()
+                    conn3.close()
+                elif (not len(UserInputs[7].split("@")) == 2) and (not UserInputs[7] == "Not Specified#(Code: 01)"):
+                    self.add_acc_ui.recoverymail_lineedit.setText("Please provide a valid email address.")
+                    conn3.commit()
+                    conn3.close()
+                #End Of The Mail Address And Not Specified Control
                 else:
                     c3.execute("""INSERT INTO acc_storage (acc_platform, 
                     username, 
@@ -219,7 +236,175 @@ class App(QtWidgets.QMainWindow):
                     self.saved_noti()
                     self.addNewWindow.close()
     #End of Saving Function
+
+    #Password Randomizing and Password Settings
+    def check_to_create_conf_file(self):
+        settings_location = "Conf/AS_Pass_Settings.ini"
+        default_settings = """/Random Password Properties/
+        Pass_Create_Mode_1: 1
+        Pass_Create_Mode_2: 1
+        Pass_Create_Mode_3: 1
+        Pass_Create_Mode_4: 1
+        Min_Char_Count: 20
+        Max_Char_Count: 25
+        /EndOfSetting/"""
+        if not os.path.exists(settings_location):
+            os.mkdir("Conf")
+            with open("Conf/AS_Pass_Settings.ini", 'w') as pass_settings_file:
+                pass_settings_file.write(default_settings)
+            pass_settings_file.close()
+
+    def passrandomizer_getsettings(self, gui_name):
+        self.check_to_create_conf_file()
+        pass_mode1 = ""
+        pass_mode2 = ""
+        pass_mode3 = ""
+        pass_mode4 = ""
+        pass_max_char = ""
+        pass_min_char = ""
+        isReadingPassSettings = False
+        with open("Conf/AS_Pass_Settings.ini", 'r') as pass_settings_file:
+            lines = pass_settings_file.readlines()
+            lines = list(map(str.strip, lines))
+            for line in lines:
+                line.strip()
+                if line == "/Random Password Properties/":
+                    isReadingPassSettings = True
+                elif line.startswith("Pass_Create_Mode_1: "):
+                    if line.split(": ")[-1] == "1":
+                        pass_mode1 = "1"
+                    elif line.split(": ")[-1] == "0":
+                        pass_mode1 = "0"
+                elif line.startswith("Pass_Create_Mode_2: "):
+                    if line.split(": ")[-1] == "1":
+                        pass_mode2 = "1"
+                    elif line.split(": ")[-1] == "0":
+                        pass_mode2 = "0"
+                elif line.startswith("Pass_Create_Mode_3: "):
+                    if line.split(": ")[-1] == "1":
+                        pass_mode3 = "1"
+                    elif line.split(": ")[-1] == "0":
+                        pass_mode3 = "0"
+                elif line.startswith("Pass_Create_Mode_4: "):
+                    if line.split(": ")[-1] == "1":
+                        pass_mode4 = "1"
+                    elif line.split(": ")[-1] == "0":
+                        pass_mode4 = "0"
+                elif line.startswith("Min_Char_Count: "):
+                    if not line.split(": ")[-1] == "":
+                        pass_min_char = str(line.split(": ")[-1])
+                    else:
+                        pass_min_char = 10
+                elif line.startswith("Max_Char_Count: "):
+                    if not line.split(": ")[-1] == "":
+                        pass_max_char = str(line.split(": ")[-1])
+                    else:
+                        pass_max_char = 15
+                elif line == ("/EndOfSetting/") and isReadingPassSettings == True:
+                    isReadingPassSettings = False
+                    generated_password = create_list(pass_mode1, pass_mode2, pass_mode3, pass_mode4,
+                                                     pass_min_char, pass_max_char)
+                    if gui_name == "add_new":
+                        self.add_acc_ui.userpassword_lineedit.setText(generated_password)
+                    elif gui_name == "edit_existing":
+                        self.edit_acc_ui.userpassword_lineedit.setText(generated_password)
+        pass_settings_file.close()
+    #This also opens the Settings interface of Pass randomizer
+    def passrandomizer_getsettingsforUI(self):
+        self.check_to_create_conf_file()
+        self.passSetWindow = QtWidgets.QMainWindow()
+        self.pass_set_ui = Ui_PasswordGeneratorSettings()
+        self.pass_set_ui.setupUi(self.passSetWindow)
+        self.pass_set_ui.minchar_lineedit.textChanged.connect(self.lineedit_txt_changed_min)
+        self.pass_set_ui.maxchar_lineedit.textChanged.connect(self.lineedit_txt_changed_max)
+        self.pass_set_ui.saved_label.hide()
+
+        self.passSetWindow.show()
+        self.pass_set_ui.save_passsett_btn.clicked.connect(self.save_new_settings_for_pass_rnd)
+
+    #Lineedits text changed
+    def lineedit_txt_changed_min(self):
+        try:
+            if self.pass_set_ui.minchar_lineedit.text() == "":
+                pass
+            elif int(self.pass_set_ui.minchar_lineedit.text()) > 30:
+                self.pass_set_ui.minchar_lineedit.setText("30")
+            else:
+                pass
+        except():
+            pass
+
+    def lineedit_txt_changed_max(self):
+        try:
+            if self.pass_set_ui.maxchar_lineedit.text() == "":
+                pass
+            elif int(self.pass_set_ui.maxchar_lineedit.text()) > 30:
+                self.pass_set_ui.maxchar_lineedit.setText("30")
+            else:
+                pass
+        except():
+            pass
+
+
+    #Saving New Settings For Password Randomizer
+    def save_new_settings_for_pass_rnd(self):
+        pass_mode1 = self.pass_set_ui.passmode1_checkbox.isChecked()
+        pass_mode2 = self.pass_set_ui.passmode2_checkbox.isChecked()
+        pass_mode3 = self.pass_set_ui.passmode3_checkbox.isChecked()
+        pass_mode4 = self.pass_set_ui.passmode4_checkbox.isChecked()
+        pass_max_char = self.pass_set_ui.maxchar_lineedit.text()
+        pass_min_char = self.pass_set_ui.minchar_lineedit.text()
+        settings_begin = "/Random Password Properties/\n"
+        settings_end = "/EndOfSetting/"
+        if not (pass_mode1 or pass_mode2 or pass_mode3 or pass_mode4):
+            pass_mode1 = True
+            self.pass_set_ui.passmode1_checkbox.setChecked(True)
+            pass_mode2 = True
+            self.pass_set_ui.passmode2_checkbox.setChecked(True)
+            pass_mode3 = True
+            self.pass_set_ui.passmode3_checkbox.setChecked(True)
+            pass_mode4 = True
+            self.pass_set_ui.passmode4_checkbox.setChecked(True)
+        if pass_max_char == "":
+            pass_max_char = "25"
+            self.pass_set_ui.maxchar_lineedit.setText(pass_max_char)
+        if pass_min_char == "":
+            pass_min_char = "20"
+            self.pass_set_ui.minchar_lineedit.setText(pass_min_char)
+        if int(pass_max_char) < int(pass_min_char):
+            pass_temp = pass_max_char
+            pass_max_char = pass_min_char
+            pass_min_char = pass_temp
+            self.pass_set_ui.minchar_lineedit.setText(pass_min_char)
+            self.pass_set_ui.maxchar_lineedit.setText(pass_max_char)
+        with open("Conf/AS_Pass_Settings.ini", 'w') as pass_settings_file:
+            pass_settings_file.write(settings_begin)
+            if pass_mode1 == True:
+                pass_settings_file.write("Pass_Create_Mode_1: 1\n")
+            elif pass_mode1 == False:
+                pass_settings_file.write("Pass_Create_Mode_1: 0\n")
+            if pass_mode2 == True:
+                pass_settings_file.write("Pass_Create_Mode_2: 1\n")
+            elif pass_mode2 == False:
+                pass_settings_file.write("Pass_Create_Mode_2: 0\n")
+            if pass_mode3 == True:
+                pass_settings_file.write("Pass_Create_Mode_3: 1\n")
+            elif pass_mode3 == False:
+                pass_settings_file.write("Pass_Create_Mode_3: 0\n")
+            if pass_mode4 == True:
+                pass_settings_file.write("Pass_Create_Mode_4: 1\n")
+            elif pass_mode4 == False:
+                pass_settings_file.write("Pass_Create_Mode_4: 0\n")
+            pass_settings_file.write(f"Min_Char_Count: {pass_min_char}\n")
+            pass_settings_file.write(f"Max_Char_Count: {pass_max_char}\n")
+            pass_settings_file.write(settings_end)
+        pass_settings_file.close()
+        self.pass_set_ui.save_passsett_btn.setDisabled(True)
+        self.pass_set_ui.saved_label.show()
+
+
 #End Of Add New Account Window Functions
+
 
 #Examine Account Window Functions
     def bind_acc_data_exm(self, selected_account_given):
@@ -305,7 +490,7 @@ class App(QtWidgets.QMainWindow):
         self.edit_acc_ui.recoverycodes_lineedit.setText(self.exm_acc_ui.recoverycodes_lineedit.text())
         self.edit_acc_ui.phonenumber_lineedit.setText(self.exm_acc_ui.phonenumber_lineedit.text())
         self.edit_acc_ui.recoverymail_lineedit.setText(self.exm_acc_ui.recoverymail_lineedit.text())
-        self.edit_acc_ui.clearall_button.clicked.connect(self.clearall_editing)
+        self.edit_acc_ui.clearall_button.clicked.connect(self.clearall_Editing)
         self.edit_acc_ui.clearPlatform_button.clicked.connect(self.clear_Platform_Editing)
         self.edit_acc_ui.clearUsername_button.clicked.connect(self.clear_Username_Editing)
         self.edit_acc_ui.clearMail_button.clicked.connect(self.clear_Mail_Editing)
@@ -316,10 +501,12 @@ class App(QtWidgets.QMainWindow):
         self.edit_acc_ui.clearRecoveryMail_button.clicked.connect(self.clear_RecoveryMail_Editing)
         self.edit_acc_ui.OverwriteAccount_button.clicked.connect(self.OverwriteToDatabase)
         self.edit_acc_ui.delete_acc_button.clicked.connect(self.DeleteFromDatabase)
+        self.edit_acc_ui.randompasssett_btn.clicked.connect(self.passrandomizer_getsettingsforUI)
+        self.edit_acc_ui.randomizepass_btn.clicked.connect(partial(self.passrandomizer_getsettings, "edit_existing"))
     #End Of Opening Edit Window
 
     #Clear Operations For Editing Window
-    def clearall_editing(self):
+    def clearall_Editing(self):
         self.edit_acc_ui.platform_lineedit.setText("")
         self.edit_acc_ui.username_lineedit.setText("")
         self.edit_acc_ui.usermail_lineedit.setText("")
@@ -364,7 +551,7 @@ class App(QtWidgets.QMainWindow):
         if (self.edit_acc_ui.platform_lineedit.text(), self.edit_acc_ui.username_lineedit.text(),
                 self.edit_acc_ui.usermail_lineedit.text()) in general_acc_attr:
 
-                self.cant_add_existing_account()
+            self.cant_add_existing_account()
 
         else:
             edited_datas = [self.edit_acc_ui.platform_lineedit.text(),
@@ -377,10 +564,23 @@ class App(QtWidgets.QMainWindow):
                             self.edit_acc_ui.recoverymail_lineedit.text()]
 
             edited_datas = self.NotSpecifeidCalculator(given_entries_list=edited_datas)
-            if self.isAllNotSpecified(given_entries_list=edited_datas):
+            #Mail Address And Not Specified Control
+
+            if (not len(edited_datas[2].split("@")) == 2) and (not edited_datas[2] == "Not Specified#(Code: 01)"):
+                self.edit_acc_ui.usermail_lineedit.setText("Please provide a valid email address.")
+                if (not len(edited_datas[7].split("@")) == 2) and (not edited_datas[7] == "Not Specified#(Code: 01)"):
+                    self.edit_acc_ui.recoverymail_lineedit.setText("Please provide a valid email address.")
+                conn5.commit()
+                conn5.close()
+            elif (not len(edited_datas[7].split("@")) == 2) and (not edited_datas[7] == "Not Specified#(Code: 01)"):
+                self.edit_acc_ui.recoverymail_lineedit.setText("Please provide a valid email address.")
+                conn5.commit()
+                conn5.close()
+            elif self.isAllNotSpecified(given_entries_list=edited_datas):
                 self.cant_everythink_not_specified()
                 conn5.commit()
                 conn5.close()
+            #End Of The Mail Address And Not Specified Control
             else:
                 c5.execute(f"""UPDATE acc_storage SET acc_platform = '{edited_datas[0]}', 
                 username = '{edited_datas[1]}', 
@@ -424,7 +624,6 @@ class App(QtWidgets.QMainWindow):
             self.acc_info_read()
         elif isconfirm == Value_No:
             pass
-
 #End Of Examine Account Window Functions
 
     #This Functions Writes Datas To Table
