@@ -85,7 +85,7 @@ class App(QtWidgets.QMainWindow):
             os.mkdir("LogSvd")
         if not os.path.exists("AccSvd"):
             os.mkdir("AccSvd")
-        key = b'DwUD_N3aGs8WFT74CZ17AvvqG6ZLNH6hxxp8s0QDEjc='
+        key = b'Your Key Here'
         key_db = get_random_bytes(32)
         username_crt = self.create_acc_ui.username_crtnewacc_lineedit.text()
         userpassword_crt = self.create_acc_ui.password_crtnewacc_linedit.text()
@@ -136,7 +136,7 @@ class App(QtWidgets.QMainWindow):
         if search in accounts:
             with open(f"LogSvd/{search}", 'rb') as save_file_login_update:
                 data = save_file_login_update.read()
-                key = b'DwUD_N3aGs8WFT74CZ17AvvqG6ZLNH6hxxp8s0QDEjc='
+                key = b'Your Key Here'
                 encrypted_data = self.decrypterforLogSvd(data, key)
                 save_bytes_list = encrypted_data.split(base64.b64encode(my_seperator.encode("ascii")))
             save_file_login_update.close()
