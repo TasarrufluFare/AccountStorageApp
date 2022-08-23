@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'selectionForm.ui'
+# Form implementation generated from reading ui file '.\selectionForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,10 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(522, 684)
+        MainWindow.resize(522, 778)
         MainWindow.setMaximumSize(QtCore.QSize(522, 16777215))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("Resources/icons/vault.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\Resources/icons/vault.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QWidget\n"
 "{\n"
@@ -30,14 +30,26 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.examineButton = QtWidgets.QPushButton(self.centralwidget)
+        self.generalLabel = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(22)
+        self.generalLabel.setFont(font)
+        self.generalLabel.setStyleSheet("QLabel\n"
+"{\n"
+"    background-color: transparent;\n"
+"    color: #ff1056;\n"
+"}")
+        self.generalLabel.setObjectName("generalLabel")
+        self.gridLayout.addWidget(self.generalLabel, 0, 0, 1, 2)
+        self.login_logout_btn = QtWidgets.QPushButton(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Verdana Pro Semibold")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.examineButton.setFont(font)
-        self.examineButton.setStyleSheet("QPushButton\n"
+        self.login_logout_btn.setFont(font)
+        self.login_logout_btn.setStyleSheet("QPushButton\n"
 "{\n"
 "    background-color: #ff1056;\n"
 "    color: #fff;\n"
@@ -54,21 +66,10 @@ class Ui_MainWindow(object):
 "    background-color: #CB6FFF;\n"
 "\n"
 "}")
-        self.examineButton.setObjectName("examineButton")
-        self.gridLayout.addWidget(self.examineButton, 2, 0, 1, 1)
-        self.generalLabel = QtWidgets.QLabel(self.centralwidget)
-        font = QtGui.QFont()
-        font.setFamily("Microsoft JhengHei")
-        font.setPointSize(22)
-        self.generalLabel.setFont(font)
-        self.generalLabel.setStyleSheet("QLabel\n"
-"{\n"
-"    background-color: transparent;\n"
-"    color: #ff1056;\n"
-"}")
-        self.generalLabel.setObjectName("generalLabel")
-        self.gridLayout.addWidget(self.generalLabel, 0, 0, 1, 2)
+        self.login_logout_btn.setObjectName("login_logout_btn")
+        self.gridLayout.addWidget(self.login_logout_btn, 1, 0, 1, 2)
         self.acc_Table = QtWidgets.QTableWidget(self.centralwidget)
+        self.acc_Table.setEnabled(False)
         self.acc_Table.setMaximumSize(QtCore.QSize(501, 16777215))
         self.acc_Table.setStyleSheet("QTableWidget\n"
 "{\n"
@@ -210,8 +211,36 @@ class Ui_MainWindow(object):
         self.acc_Table.horizontalHeader().setCascadingSectionResizes(False)
         self.acc_Table.horizontalHeader().setDefaultSectionSize(120)
         self.acc_Table.horizontalHeader().setMinimumSectionSize(0)
-        self.gridLayout.addWidget(self.acc_Table, 1, 0, 1, 2)
+        self.gridLayout.addWidget(self.acc_Table, 2, 0, 1, 2)
+        self.examineButton = QtWidgets.QPushButton(self.centralwidget)
+        self.examineButton.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Verdana Pro Semibold")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.examineButton.setFont(font)
+        self.examineButton.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #fff;\n"
+"    font-size: 11px;\n"
+"    font-weight: bold;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #CB6FFF;\n"
+"\n"
+"}")
+        self.examineButton.setObjectName("examineButton")
+        self.gridLayout.addWidget(self.examineButton, 3, 0, 1, 1)
         self.addnewButton = QtWidgets.QPushButton(self.centralwidget)
+        self.addnewButton.setEnabled(False)
         font = QtGui.QFont()
         font.setFamily("Verdana Pro Cond")
         font.setPointSize(-1)
@@ -237,7 +266,35 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.addnewButton.setObjectName("addnewButton")
-        self.gridLayout.addWidget(self.addnewButton, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.addnewButton, 3, 1, 1, 1)
+        self.lockTheAccs_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.lockTheAccs_btn.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Verdana Pro Cond")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.lockTheAccs_btn.setFont(font)
+        self.lockTheAccs_btn.setStyleSheet("QPushButton\n"
+"{\n"
+"    background-color: #ff1056;\n"
+"    color: #fff;\n"
+"    font-size: 11px;\n"
+"    font-weight: bold;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #CB6FFF;\n"
+"\n"
+"}")
+        self.lockTheAccs_btn.setObjectName("lockTheAccs_btn")
+        self.gridLayout.addWidget(self.lockTheAccs_btn, 4, 0, 1, 2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 522, 21))
@@ -253,8 +310,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Account Storage"))
-        self.examineButton.setText(_translate("MainWindow", "Examine the selected account."))
         self.generalLabel.setText(_translate("MainWindow", "All Stored Accounts Are Down Below."))
+        self.login_logout_btn.setText(_translate("MainWindow", "Login to Access Your Accounts"))
         self.acc_Table.setSortingEnabled(True)
         item = self.acc_Table.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
@@ -264,7 +321,9 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Username"))
         item = self.acc_Table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "User Mail"))
+        self.examineButton.setText(_translate("MainWindow", "Examine the selected account."))
         self.addnewButton.setText(_translate("MainWindow", "Add New"))
+        self.lockTheAccs_btn.setText(_translate("MainWindow", "Safe Exit"))
 
 
 if __name__ == "__main__":

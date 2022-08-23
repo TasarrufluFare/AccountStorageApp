@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>522</width>
-    <height>684</height>
+    <height>778</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -36,8 +36,28 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
-     <widget class="QPushButton" name="examineButton">
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="generalLabel">
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+	background-color: transparent;
+	color: #ff1056;
+}</string>
+      </property>
+      <property name="text">
+       <string>All Stored Accounts Are Down Below.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QPushButton" name="login_logout_btn">
       <property name="font">
        <font>
         <family>Verdana Pro Semibold</family>
@@ -66,32 +86,15 @@ QPushButton::pressed
 }</string>
       </property>
       <property name="text">
-       <string>Examine the selected account.</string>
+       <string>Login to Access Your Accounts</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="generalLabel">
-      <property name="font">
-       <font>
-        <family>Microsoft JhengHei</family>
-        <pointsize>22</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel
-{
-	background-color: transparent;
-	color: #ff1056;
-}</string>
-      </property>
-      <property name="text">
-       <string>All Stored Accounts Are Down Below.</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="2">
+    <item row="2" column="0" colspan="2">
      <widget class="QTableWidget" name="acc_Table">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="maximumSize">
        <size>
         <width>501</width>
@@ -262,8 +265,48 @@ QHeaderWidget::section::horizontal
       </column>
      </widget>
     </item>
-    <item row="2" column="1">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="examineButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana Pro Semibold</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color: #ff1056;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+
+}
+
+QPushButton::pressed
+{
+	background-color: #CB6FFF;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Examine the selected account.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
      <widget class="QPushButton" name="addnewButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="font">
        <font>
         <family>Verdana Pro Cond</family>
@@ -294,6 +337,44 @@ QPushButton::pressed
       </property>
       <property name="text">
        <string>Add New</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QPushButton" name="lockTheAccs_btn">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana Pro Cond</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color: #ff1056;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+
+}
+
+QPushButton::pressed
+{
+	background-color: #CB6FFF;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Safe Exit</string>
       </property>
      </widget>
     </item>

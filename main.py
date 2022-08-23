@@ -1,50 +1,170 @@
 import os
 import sqlite3
+from Crypto.Cipher import AES
+import base64
+from cryptography.fernet import Fernet
+from Crypto.Random import get_random_bytes
+
 from PyQt5 import QtWidgets
 from functools import partial
-from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
+
+from PyQt5.QtGui import QIntValidator
+from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox, QLineEdit
 import sys
 from selectionForm import Ui_MainWindow
 from addnewaccForm import Ui_AddNewAccoutWindow
 from examineAccountForm import Ui_ExamineAccountWindow
 from editaccForm import Ui_EditAccounttWindow
+from createnewaccountForm import Ui_CreateNewAccount
+from loginForm import Ui_LoginScreen
 import clipboard
 from PasswordRandomize import create_list
 from PassSet import Ui_PasswordGeneratorSettings
+from encrypter import encrypter_method
+from Crypto.Random import get_random_bytes
+from decrypter import decrypter_method
 
-conn = sqlite3.connect("AccStorage.db")
-c = conn.cursor()
-c.execute("""CREATE TABLE  if not exists acc_storage (
-acc_id INTEGER PRIMARY KEY,
-acc_platform text, 
-username text, 
-user_mail text, 
-user_password text, 
-acc_creation_date text, 
-acc_recovery_codes text, 
-acc_phone_number text, 
-acc_recovery_mail text
-)""")
 
-# c.execute("""INSERT INTO acc_storage (acc_platform,
-# username,
-# user_mail,
-# user_password,
-# acc_creation_date,
-# acc_recovery_codes,
-# acc_phone_number,
-# acc_recovery_mail) VALUES ('Reddit', 'Fare', 'Tasarruflu@xyz.com', 'abcdefg', '5.5.5', 'xxxxaaaa', '9305010', 'recovery@gmail.com')""")
-conn.commit()
-conn.close()
+def login_control():
+    if not os.path.exists("LogSvd"):
+        os.mkdir("LogSvd")
 
 
 class App(QtWidgets.QMainWindow):
+    database_location = "AccSvd/AccStorage.db"
+    database_name = "AccStorage.db"
+
+    def first_controls(self, database_location):
+        if not os.path.exists("AccSvd"):
+            os.mkdir("AccSvd")
+        stored_dbs = os.listdir("AccSvd")
+        database_name = database_location.replace("AccSvd/", "")
+        database_encryted_name = database_name.split(".")
+        database_encryted_name[-1] = "bin"
+        self.database_name = database_encryted_name[0]+"."+database_encryted_name[1]
+        if self.database_name in stored_dbs:
+            decrypter_method(f"AccSvd/{self.database_name}", self.database_name, self.account_db_key)
+        conn = sqlite3.connect(database_location)
+        c = conn.cursor()
+        c.execute("""CREATE TABLE  if not exists acc_storage (
+            acc_id INTEGER PRIMARY KEY,
+            acc_platform text, 
+            username text, 
+            user_mail text, 
+            user_password text, 
+            acc_creation_date text, 
+            acc_recovery_codes text, 
+            acc_phone_number text, 
+            acc_recovery_mail text
+            )""")
+
+        # c.execute("""INSERT INTO acc_storage (acc_platform,
+        # username,
+        # user_mail,
+        # user_password,
+        # acc_creation_date,
+        # acc_recovery_codes,
+        # acc_phone_number,
+        # acc_recovery_mail) VALUES ('Reddit', 'Fare', 'Tasarruflu@xyz.com', 'abcdefg', '5.5.5', 'xxxxaaaa', '9305010', 'recovery@gmail.com')""")
+        conn.commit()
+        conn.close()
+
+
+    def open_login_page(self):
+        self.loginWindow = QtWidgets.QMainWindow()
+        self.login_ui = Ui_LoginScreen()
+        self.login_ui.setupUi(self.loginWindow)
+        self.login_ui.createnewacc_btn.clicked.connect(self.open_create_account)
+        self.login_ui.login_btn.clicked.connect(self.check_and_verify_login)
+        self.login_ui.login_password_lineedit.setEchoMode(QLineEdit.Password)
+        self.login_ui.saved_label.setVisible(False)
+        #self.login_ui.login_btn.clicked.connect(start_app)
+        self.loginWindow.show()
+    def save_account_properties_crt_new_account(self):
+        if not os.path.exists("LogSvd"):
+            os.mkdir("LogSvd")
+        if not os.path.exists("AccSvd"):
+            os.mkdir("AccSvd")
+        key = b'DwUD_N3aGs8WFT74CZ17AvvqG6ZLNH6hxxp8s0QDEjc='
+        key_db = get_random_bytes(32)
+        username_crt = self.create_acc_ui.username_crtnewacc_lineedit.text()
+        userpassword_crt = self.create_acc_ui.password_crtnewacc_linedit.text()
+        usermail_crt = self.create_acc_ui.usermail_crtnewacc_lineedit.text()
+        my_seperator = "##tfei##"
+        accounts = os.listdir("LogSvd")
+        search = f"{username_crt}.bin"
+        if not search in accounts:
+            user_create_acc_properties = [username_crt.encode("ascii"), usermail_crt.encode("ascii"),
+                                          userpassword_crt.encode("ascii"), key_db]
+            if not os.path.exists(f"LogSvd/{username_crt}.bin"):
+                save_file = open(f"LogSvd/{username_crt}.bin", 'wb')
+                string2write = (base64.b64encode(user_create_acc_properties[0])) + (base64.b64encode(my_seperator.encode("ascii"))) + (base64.b64encode(user_create_acc_properties[1])) + (base64.b64encode(my_seperator.encode("ascii"))) + (base64.b64encode(user_create_acc_properties[2]) + (base64.b64encode(my_seperator.encode("ascii"))) + (base64.b64encode(user_create_acc_properties[3])))
+                encrypted_str_to_write = self.encrpyterforLogSvd1(string2write, key)
+                save_file.write(encrypted_str_to_write)
+                save_file.close()
+            try:
+                with open(f"LogSvd/{username_crt}.bin", 'rb') as save_file_login_update:
+                    encrypted_readed_byte = save_file_login_update.read()
+                    decrypted_str = self.decrypterforLogSvd(encrypted_readed_byte, key)
+                    save_bytes_list = decrypted_str.split(
+                        base64.b64encode(my_seperator.encode("ascii")))
+                save_file_login_update.close()
+                self.login_ui.UserMailOrUsername_linedit.setText(
+                    base64.b64decode(save_bytes_list[0]).decode('ascii'))
+                self.login_ui.login_password_lineedit.setText(
+                     base64.b64decode(save_bytes_list[2]).decode('ascii'))
+                self.create_acc_ui.saved_label.setText("Successfully Created")
+                self.create_acc_ui.saved_label.setVisible(True)
+                self.create_acc_ui.createnewaccconfirm_btn.setDisabled(True)
+            except():
+                pass
+        else:
+            self.create_acc_ui.saved_label.setText("Account Already Exists")
+            self.create_acc_ui.saved_label.setVisible(True)
+
+    account_db_key = ""
+    def check_and_verify_login(self):
+        if not os.path.exists("AccSvd"):
+            os.mkdir("AccSvd")
+        if not os.path.exists("LogSvd"):
+            os.mkdir("LogSvd")
+        given_username = self.login_ui.UserMailOrUsername_linedit.text()
+        given_password = self.login_ui.login_password_lineedit.text()
+        my_seperator = "##tfei##"
+        accounts = os.listdir("LogSvd")
+        search = f"{given_username}.bin"
+        if search in accounts:
+            with open(f"LogSvd/{search}", 'rb') as save_file_login_update:
+                data = save_file_login_update.read()
+                key = b'DwUD_N3aGs8WFT74CZ17AvvqG6ZLNH6hxxp8s0QDEjc='
+                encrypted_data = self.decrypterforLogSvd(data, key)
+                save_bytes_list = encrypted_data.split(base64.b64encode(my_seperator.encode("ascii")))
+            save_file_login_update.close()
+            if base64.b64decode(save_bytes_list[2]).decode('ascii') == given_password:
+                self.ui.acc_Table.setEnabled(True)
+                self.ui.addnewButton.setEnabled(True)
+                self.ui.examineButton.setEnabled(True)
+                self.ui.lockTheAccs_btn.setEnabled(True)
+                self.database_location = f"AccSvd/AccStorage_{given_username}.db"
+                self.account_db_key = base64.b64decode(save_bytes_list[3])
+                self.first_controls(database_location=self.database_location)
+                self.acc_info_read()
+                self.loginWindow.close()
+            else:
+                self.login_ui.saved_label.setText("Access Denied")
+                self.login_ui.saved_label.setVisible(True)
+        else:
+            self.login_ui.saved_label.setText("Account Not Found.")
+            self.login_ui.saved_label.setVisible(True)
+
     def __init__(self):
         super(App, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.examineButton.clicked.connect(self.examineAcc)
         self.ui.addnewButton.clicked.connect(self.open_addNewAcc)
+        self.ui.lockTheAccs_btn.clicked.connect(self.safe_exit)
+        self.ui.login_logout_btn.clicked.connect(self.open_login_page)
         self.ui.acc_Table.setColumnWidth(0, 150)
         self.ui.acc_Table.setColumnWidth(1, 167)
         self.ui.acc_Table.setColumnWidth(2, 167)
@@ -52,9 +172,28 @@ class App(QtWidgets.QMainWindow):
         self.ui.acc_Table.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.Fixed)
         self.ui.acc_Table.horizontalHeader().setSectionResizeMode(2, QtWidgets.QHeaderView.Fixed)
         self.ui.acc_Table.setSelectionBehavior(QtWidgets.QTableView.SelectRows)
-        self.acc_info_read()
+        self.open_login_page()
+        #self.acc_info_read()
+    #Encryption and Decryption for Accounts Save
+    def encrpyterforLogSvd1(self,data,key):
+        print("Data:" + str(data))
+        print(type(data))
+        f = Fernet(key)
+        encrypted = f.encrypt(data)
+        return encrypted
 
-
+    def decrypterforLogSvd(self, data, key):
+        f = Fernet(key)
+        decrypted = f.decrypt(data)
+        return decrypted
+#Login screen thing
+    def open_create_account(self):
+        self.createaccWindow = QtWidgets.QMainWindow()
+        self.create_acc_ui = Ui_CreateNewAccount()
+        self.create_acc_ui.setupUi(self.createaccWindow)
+        self.create_acc_ui.createnewaccconfirm_btn.clicked.connect(self.save_account_properties_crt_new_account)
+        self.create_acc_ui.saved_label.setVisible(False)
+        self.createaccWindow.show()
 #Add New Account Window Functions
     def open_addNewAcc(self):
         self.addNewWindow = QtWidgets.QMainWindow()
@@ -112,6 +251,21 @@ class App(QtWidgets.QMainWindow):
         msg2.setWindowTitle("Information")
         msg2.setStandardButtons(QMessageBox.Ok)
         msg2.exec_()
+    def saved_noti_safe_exit(self):
+        msg7 = QMessageBox()
+        msg7.setIcon(QMessageBox.Information)
+        msg7.setText("Succesfully Secured The Accounts, Account Storage App Will Be Closed!")
+        msg7.setWindowTitle("Information")
+        msg7.setStandardButtons(QMessageBox.Ok)
+        msg7.exec_()
+    def couldnt_saved_noti_safe_exit(self):
+        msg8 = QMessageBox()
+        msg8.setIcon(QMessageBox.Information)
+        msg8.setText("Could Not Secure The Accounts, Operation Terminated!")
+        msg8.setWindowTitle("Information")
+        msg8.setDetailedText("Unable To Reach Database. May Be Deleted.")
+        msg8.setStandardButtons(QMessageBox.Ok)
+        msg8.exec_()
     def overwrited_noti(self):
         msg3 = QMessageBox()
         msg3.setIcon(QMessageBox.Information)
@@ -177,7 +331,7 @@ class App(QtWidgets.QMainWindow):
             msg.exec_()
 
         else:
-            conn3 = sqlite3.connect("AccStorage.db")
+            conn3 = sqlite3.connect(self.database_location)
             c3 = conn3.cursor()
             c3.execute("SELECT * FROM acc_storage")
             existing_accounts = c3.fetchall()
@@ -317,6 +471,10 @@ class App(QtWidgets.QMainWindow):
         self.pass_set_ui.setupUi(self.passSetWindow)
         self.pass_set_ui.minchar_lineedit.textChanged.connect(self.lineedit_txt_changed_min)
         self.pass_set_ui.maxchar_lineedit.textChanged.connect(self.lineedit_txt_changed_max)
+        onlyint = QIntValidator()
+        onlyint.setRange(0, 30)
+        self.pass_set_ui.minchar_lineedit.setValidator(onlyint)
+        self.pass_set_ui.maxchar_lineedit.setValidator(onlyint)
         self.pass_set_ui.saved_label.hide()
 
         self.passSetWindow.show()
@@ -440,7 +598,7 @@ class App(QtWidgets.QMainWindow):
             selected_Platform = self.ui.acc_Table.item(selected_row_index, 0).text()
             selected_username = self.ui.acc_Table.item(selected_row_index, 1).text()
             selected_usermail = self.ui.acc_Table.item(selected_row_index, 2).text()
-            conn4 = sqlite3.connect("AccStorage.db")
+            conn4 = sqlite3.connect(self.database_location)
             c4 = conn4.cursor()
             c4.execute(f"""SELECT * FROM acc_storage WHERE acc_platform = '{selected_Platform}' AND
             username = '{selected_username}' AND user_mail = '{selected_usermail}' """)
@@ -539,7 +697,7 @@ class App(QtWidgets.QMainWindow):
         selected_Platform = self.ui.acc_Table.item(selected_row_index, 0).text()
         selected_username = self.ui.acc_Table.item(selected_row_index, 1).text()
         selected_usermail = self.ui.acc_Table.item(selected_row_index, 2).text()
-        conn5 = sqlite3.connect("AccStorage.db")
+        conn5 = sqlite3.connect(self.database_location)
         c5 = conn5.cursor()
         c5.execute("SELECT * FROM acc_storage")
         existing_accounts = c5.fetchall()
@@ -613,7 +771,7 @@ class App(QtWidgets.QMainWindow):
             selected_Platform = self.ui.acc_Table.item(selected_row_index, 0).text()
             selected_username = self.ui.acc_Table.item(selected_row_index, 1).text()
             selected_usermail = self.ui.acc_Table.item(selected_row_index, 2).text()
-            conn6 = sqlite3.connect("AccStorage.db")
+            conn6 = sqlite3.connect(self.database_location)
             c6 = conn6.cursor()
             c6.execute(f"""DELETE FROM acc_storage WHERE acc_platform = '{selected_Platform}' 
             AND username = '{selected_username}' AND  user_mail='{selected_usermail}'""")
@@ -628,7 +786,7 @@ class App(QtWidgets.QMainWindow):
 
     #This Functions Writes Datas To Table
     def acc_info_read(self):
-        conn = sqlite3.connect("AccStorage.db")
+        conn = sqlite3.connect(self.database_location)
         c = conn.cursor()
         c.execute("SELECT * FROM acc_storage")
         items = c.fetchall()
@@ -646,7 +804,14 @@ class App(QtWidgets.QMainWindow):
             index = index + 1
         conn.commit()
         conn.close()
-
+    #Crypto-Operation for database
+    def safe_exit(self):
+        if os.path.exists(self.database_location):
+            encrypter_method(self.database_location, self.database_name, self.account_db_key)
+            self.saved_noti_safe_exit()
+            self.close()
+        else:
+            self.couldnt_saved_noti_safe_exit()
 
 def start_app():
     app = QtWidgets.QApplication(sys.argv)
